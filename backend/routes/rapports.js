@@ -88,7 +88,7 @@ router.get('/:date', auth, async (req, res) => {
     const totalPaye = ventes.reduce((s, v) => s + Number(v.paiement), 0);
     const totalImpayesVentes = ventes.reduce((s, v) => s + Number(v.solde), 0);
     const totalRecouvr = recouvrements.reduce((s, r) => s + Number(r.montant_recu), 0);
-    const totalCash = totalPaye + totalRecouvr;
+    const totalCash = recouvrements.reduce((s, r) => s + Number(r.montant_recu), 0);
     const totalQte = ventes.reduce((s, v) => s + Number(v.quantite), 0);
     const totalImpayesGlobal = impayes.reduce((s, c) => s + Number(c.solde_global), 0);
 
