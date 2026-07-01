@@ -927,8 +927,7 @@ function exportRapportExcel() {
   const d = rapportData; const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([
     ['Rapport Positive Distribution — ' + d.date.split('-').reverse().join('/')],[''],
-    ['Total ventes',Number(d.totaux.totalVentes)],['Total encaissé',Number(d.totaux.totalPaye)],
-    ['Total recouvrements',Number(d.totaux.totalRecouvr)],['Total cash',Number(d.totaux.totalCash)],
+    ['Total ventes',Number(d.totaux.totalVentes)],['Total cash (recouvrements)',Number(d.totaux.totalCash)],
     ['Impayés global',Number(d.totaux.totalImpayesGlobal)],
     ['Stock restant (cartons)',d.stock.cartons],['Stock (plateaux)',d.stock.plateaux],['Stock (œufs)',d.stock.oeufs],
   ]), 'Résumé');
